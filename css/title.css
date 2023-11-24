@@ -1,0 +1,66 @@
+div#main-title {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+
+  font-size: 10rem;
+  font-family: monospace;
+  /* text-shadow: 0 0 .5rem currentColor; */
+  transform-style: preserve-3d;
+  /* perspective: 1000px; */
+  font-weight: 100;
+  /* div {
+      display: flex;
+      justify-content: center;
+    span {
+      transform: translate(1000px);
+      text-shadow: 0 0 1rem red;
+    }
+    } */
+}
+#main-title > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #0ff8; */
+}
+#main-title > div > span {
+  width: 1ch;
+  display: inline-block; /* Ta linijka mnie tyle nerwów kosztowała TYLE NERWÓW */
+
+  /* font-family: Roboto mono; */
+
+  color: #111;
+  /* text-shadow: 0 .5rem 1rem currentColor; */
+
+  opacity: 0;
+  /* transform: scale(.1) rotateY(360deg); */
+  /* transform: scale(0.1) translateY(-10rem) rotateX(540deg); */
+}
+  
+#main-title > div > span:hover {
+    scale: 1.1;
+  }
+
+@keyframes rotate-letter {
+  from {
+    opacity: 0;
+    transform: translateY(10rem) rotateX(-180deg);
+    /* scale: 0; */
+    /* scale: 0; */
+    /* transform:  translateY(-10rem) rotateX(-540deg); */
+  }
+  to {
+    opacity: 1; 
+    transform: rotateY(0deg) rotateX(0deg);
+    scale: 1;
+    /* transform: translateY(-5rem) rotate(0deg) scale(1); */
+  }
+  /* from {
+  }
+  to {
+    transform: scale(1) translateY(0) rotateX(0);
+    opacity: 1;
+  } */
+}

@@ -44,6 +44,9 @@ window.onscroll = function () {
   scrollProgressElement.children[0].style.webkitMaskImage = `linear-gradient(90deg, #000 ${
     progress * 100
   }%, #0000 ${progress * 100}%)`;
+  // scrollProgressElement.children[0].style.maskImage = `linear-gradient(90deg, #000 ${
+  //   progress * 100
+  // }%, #0000 ${progress * 100}%)`;
   // console.log(scrollProgressElement.children[0].style.mask)
 };
 
@@ -54,10 +57,11 @@ function createWord(parentElement, charArray) {
       let letter = document.createElement("span");
       letter.innerHTML = charArray[i];
       //   console.log(letter);
-      timeOffset += 150
-      letter.style.animation = `rotate-letter ${time}ms ease-out forwards ${
+      // letter.style.animation = `rotate-letter ${time}ms ease-out forwards ${
+      letter.style.animation = `rotate-letter ${time}ms ease-in-out forwards ${
         timeOffset
       }ms`;
+      timeOffset += 150
       parentElement.appendChild(letter);
     }}
     
@@ -68,16 +72,32 @@ word2 = "my".split("");
 word3 = "name".split("");
 word4 = "is".split("");
 word5 = "Julian".split("");
-
+wordCount = 5
 let timeOffset = 0;
-let time = 150;
+let time = 550;
 
 words = [word1, word2, word3, word4, word5]
-for (let i = 0; i < title.children.length; i++) {
-    createWord(title.children[i], words[i])
-    timeOffset += 300
+
+for (let i = 0; i < wordCount; i++) {
+  wordContainer = document.createElement('div')
+    createWord(wordContainer, words[i])
+    // createWord(title.children[i], words[i])
+    // timeOffset += 300
+    title.appendChild(wordContainer)
     
 };
-console.log(word);
+console.log(timeOffset); // 4500
+
+// const arrow = document.getElementById("down-arrow")
+// console.log(arrow, arrow.style.animationDelay)
+// console.log(arrow.style.animation)
+// arrow.style.animation = `arrow-appear 1s ease forwards ${timeOffset + 550}`
+// console.log(arrow.style.animation)
+console.log(arrow, arrow.style.animationDelay)
 
 
+
+
+window.addEventListener('scroll', () => {
+  document.body.style.setProperty('--scroll', window.scrollY / (document.body.offsetHeight - window.innerHeight)); // 2 raz
+}, false);

@@ -12,22 +12,8 @@
 }
 
 body {
-  /* display: flex;
-    align-items: center;
-    justify-content: center; */
   min-height: 100vh;
   margin: 0;
-}
-
-#logo {
-  --_padding-x: 2rem;
-  /* background-color: #f08; */
-  padding: 0 var(--_padding-x);
-  /* animation: fill 1s ease-in-out forwards calc(300ms * 7); */
-  /* scale: 4; */
-  height: 70vh;
-  /* width: calc(100vw - --_padding-x / 2); */
-  width: 80%;
 }
 
 section {
@@ -35,69 +21,56 @@ section {
   width: 100vw;
   display: grid;
   place-items: center;
-
-  /* background-image: linear-gradient(
-    to bottom,
-    transparent 80%,
-    var(--_finish-color) 95%
-  ); */
+  background-color: #f08;
 }
-
+/* 
 @keyframes show-line {
   to {
     stroke-dashoffset: 0;
   }
-}
-
-/* @keyframes fill {
-  from {
-    fill: transparent;
-  }
-  to {
-    fill: #111;
-  }
 } */
 
-section:nth-child(1) {
-  --_finish-color: #111;
+#s1 {
+  /* --_finish-color: #111; */
   background-color: #f08;
 }
-section:nth-child(2) {
-  --_finish-color: #f08;
+#s2 {
+  /* --_finish-color: #f08; */
   background-color: #111;
+  color: #eee;
 }
-section:nth-child(3) {
-  --_finish-color: #088;
+#s3 {
+  /* --_finish-color: #088; */
   background-color: #f08;
 }
-section:nth-child(4) {
-  --_finish-color: #111;
+#s4 {
+  /* --_finish-color: #111; */
   background-color: #0ff;
 }
-section:nth-child(5) {
-  --_finish-color: transparent;
+#s5 {
+  /* --_finish-color: transparent; */
   background-color: #111;
+  color: #eee;
 }
 
-::-webkit-scrollbar {
+::-webkit-scrollbar { /* Bedzie kiedys o tym na lekcji? */
   width: 0;
-}
+} 
 
 #scroll-progress {
   position: fixed;
-  top: 100%;
+  top: calc(100% - 10px);
   transform: translate(0, -50%);
   height: 10px;
   width: 100%;
-  /* background-color: #fff4; */
-  /* border-top: 1px solid #fff8; */
+
   box-shadow: 0 -0.1rem 0.25rem #0008;
 }
 
 .current-scroll {
   height: 100%;
   width: 100%;
-  /* background-image: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple, deeppink, red); */
+
   background-image: linear-gradient(
     90deg,
     var(--section-1-clr),
@@ -106,40 +79,36 @@ section:nth-child(5) {
     var(--section-4-clr),
     var(--section-5-clr)
   );
-  /* -webkit-mask: linear-gradient(90deg, #000, #0000); */
-  /* mask: linear-gradient(90deg, #000, #0000); */
+
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  /* background-color: #000a;   */
+
   background-blend-mode: multiply;
 }
 
-.down-arrow {
-  display: grid;
-  place-items: center;
-  /* grid-template-columns: 0fr; */
-
-  overflow: hidden;
-  opacity: 0; 
+#down-arrow {
+  opacity: 0;
   pointer-events: none;
 
-  transform: translate(0, -10vh);
-  animation: arrow-appear 1s ease forwards 7s;
+  transform: translate(0, -20vh);
+  /* animation: arrow-appear 1s ease forwards 13s; */
+  animation: arrow-appear 1s ease forwards 4200ms;
 
-
+  transition: 300ms ease-out;
   &:hover {
     scale: 1.15;
-    transition: 300ms ease-out;
   }
   &:active {
-    scale: .95;
-    /* transform: translate(0, 30vh); */
+    scale: 0.95;
+
     transition: 300ms ease;
   }
 }
-.down-arrow > img {
-  height: 10vh;
+
+#down-arrow img {
+  width: 3vw;
   aspect-ratio: 1;
+  opacity: 0.9;
 }
 
 @keyframes arrow-appear {
@@ -147,56 +116,8 @@ section:nth-child(5) {
     opacity: 0;
   }
   to {
-    opacity: 1;
+    opacity: 0.9;
     transform: translate(0, 0);
     pointer-events: all;
   }
 }
-
-div#main-title {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  flex-wrap: wrap;
-
-  font-size: 10rem;
-  font-family: monospace;
-  /* text-shadow: 0 0 .5rem currentColor; */
-  transform-style: preserve-3d;
-  /* perspective: 1000px; */
-  font-weight: 100;
-  /* div {
-    display: flex;
-    justify-content: center;
-  span {
-    transform: translate(1000px);
-    text-shadow: 0 0 1rem red;
-  }
-  } */
-
-}
-#main-title > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background-color: #0ff8; */
-}
-#main-title > div > span {
-  /* animation: rotate-letter 1s linear forwards; */
-  width: 1ch;
-  display: inline-block; /* Ta linijka mnie tyle nerwów kosztowała */
-  opacity: 0;
-  transform: scale(.3) translateY(10rem);
-}
-
-@keyframes rotate-letter {
-  /* 0% {
-    opacity: 0;
-    transform: scale(.9) translateY(10rem);
-  } */
-  to {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
-}
-

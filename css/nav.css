@@ -1,0 +1,81 @@
+/* NESTING SUPERIORITY */
+/* (it's not superior) */
+
+nav {
+    position: fixed;
+    width: 100%;
+    background: #f08;
+
+    animation: show-nav 1s ease-in forwards 1s;
+
+
+    >ul#nav-bar {
+        display: flex;
+        list-style: none;
+        /* padding: 1rem 0; */
+        box-shadow: 0 -1rem 1rem 1rem;
+        /* mix-blend-mode: multiply; */
+        padding: 0;
+
+        >li { /* :not(:has(.logo)) */
+            flex-grow: 1;
+            text-align: center;
+            height: 100%;
+            /* height: 4vh; */
+            position: relative;
+            &:hover {
+                background-color: #fff6;
+            }
+            &:active {
+                background-color: #fffb;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                height: 3px;
+                width: 0;
+                top: calc(100% - 3px);
+                background-color: red;
+                transition: .3s ease-out;
+                left: 0;
+            }
+            &:hover::after {
+                content: '';
+                position: absolute;
+                height: 3px;
+                width: 100%;
+                top: calc(100% - 3px);
+                background-color: #fff;
+            }
+            >a {
+                color: #111;
+
+
+            }
+        }
+    }
+}
+
+
+
+/* @keyframes show-nav {
+    from {
+        display: grid;
+        grid-template-columns: 0fr;
+        overflow: hidden;
+    }
+    to {
+        display: grid;
+        grid-template-columns: 1fr;
+        overflow: hidden;
+    }
+} */
+
+
+
+.logo {
+    >img  {
+    height: calc(4vh + .5rem);
+    margin: .5rem;
+    }
+}
