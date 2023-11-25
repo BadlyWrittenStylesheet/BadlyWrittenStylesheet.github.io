@@ -1,20 +1,24 @@
 :root {
-  --section-1-clr: #f08;
-  --section-2-clr: #111;
-  --section-3-clr: #f08;
-  --section-4-clr: #0ff;
-  --section-3-clr: #111;
+  --bg-clr-1: #ee70ff;
+  --bg-clr-2: #111;
+  --bg-clr-3: #e0dddd;
+
+  --color-1: #333;
+  --color-2: #ddd;
 }
 
 * {
   margin: 0;
   scroll-behavior: smooth;
+  font-weight: 600;
 }
 
 body {
   min-height: 100vh;
   margin: 0;
+  font-family: Inter;
 }
+
 
 section {
   min-height: 100vh;
@@ -30,27 +34,29 @@ section {
   }
 } */
 
+nav {
+  background-color: var(--bg-clr-1) !important;
+}
+
 #s1 {
-  /* --_finish-color: #111; */
-  background-color: #f08;
+  background-color: var(--bg-clr-1);
 }
 #s2 {
-  /* --_finish-color: #f08; */
-  background-color: #111;
-  color: #eee;
+  background-color: var(--bg-clr-2);
+  color: var(--color-2);
 }
 #s3 {
-  /* --_finish-color: #088; */
-  background-color: #f08;
+  background-color: var(--bg-clr-3);
 }
 #s4 {
-  /* --_finish-color: #111; */
-  background-color: #0ff;
+  background-color: var(--bg-clr-1);
 }
 #s5 {
-  /* --_finish-color: transparent; */
-  background-color: #111;
-  color: #eee;
+  background-color: var(--bg-clr-3);
+}
+#s6 {
+  background-color: var(--bg-clr-2);
+  color: var(--color-2);
 }
 
 ::-webkit-scrollbar { /* Bedzie kiedys o tym na lekcji? */
@@ -73,11 +79,11 @@ section {
 
   background-image: linear-gradient(
     90deg,
-    var(--section-1-clr),
-    var(--section-2-clr),
-    var(--section-3-clr),
-    var(--section-4-clr),
-    var(--section-5-clr)
+    var(--bg-1-clr),
+    var(--bg-2-clr),
+    var(--bg-3-clr),
+    var(--bg-4-clr),
+    var(--bg-5-clr)
   );
 
   -webkit-mask-repeat: no-repeat;

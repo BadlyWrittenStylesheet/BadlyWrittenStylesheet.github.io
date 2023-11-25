@@ -67,16 +67,17 @@ function createWord(parentElement, charArray) {
     
 title = document.getElementById("main-title");
 
-word1 = "Hello,".split("");
-word2 = "my".split("");
-word3 = "name".split("");
-word4 = "is".split("");
-word5 = "Julian".split("");
-wordCount = 5
+word1 = "Welcome!".split("");
+// word2 = "my".split("");
+// word3 = "name".split("");
+// word4 = "is".split("");
+// word5 = "Julian".split("");
+wordCount = 1
 let timeOffset = 0;
 let time = 550;
 
-words = [word1, word2, word3, word4, word5]
+// words = [word1, word2, word3, word4, word5]
+words = [word1]
 
 for (let i = 0; i < wordCount; i++) {
   wordContainer = document.createElement('div')

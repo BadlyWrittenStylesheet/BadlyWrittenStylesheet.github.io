@@ -7,27 +7,39 @@ nav {
     background: #f08;
 
     animation: show-nav 1s ease-in forwards 1s;
+    z-index: 5;
+    /* mix-blend-mode: difference; robi bardzo fajny efekt ale wymiotuje jak na to patrzę... */
+
 
 
     >ul#nav-bar {
         display: flex;
+        /* align-items: center;
+        justify-content: center; */
         list-style: none;
         /* padding: 1rem 0; */
         box-shadow: 0 -1rem 1rem 1rem;
-        /* mix-blend-mode: multiply; */
         padding: 0;
-
+        
         >li { /* :not(:has(.logo)) */
-            flex-grow: 1;
             text-align: center;
-            height: 100%;
+            flex-grow: 1    ;
+            /* height: 100%; */
+            height: calc(4vh + .5rem);
+            
             /* height: 4vh; */
             position: relative;
+            transition: 300ms ease-in;
+            &:has(.logo) { /* Ale zaawansowane */
+                flex-grow: .1;
+                
+            }
             &:hover {
                 background-color: #fff6;
+                /* flex-grow: 1.1; niby fajne ale niezabardzo */
             }
             &:active {
-                background-color: #fffb;
+                background-color: #fff9;
             }
             &::after {
                 content: '';
@@ -35,7 +47,7 @@ nav {
                 height: 3px;
                 width: 0;
                 top: calc(100% - 3px);
-                background-color: red;
+                background-color: #fff;
                 transition: .3s ease-out;
                 left: 0;
             }
@@ -45,37 +57,28 @@ nav {
                 height: 3px;
                 width: 100%;
                 top: calc(100% - 3px);
-                background-color: #fff;
             }
             >a {
+                display: block;
                 color: #111;
-
+                /* background-color: red; */
+                text-decoration: none;
+                height: 100%;
+                width: 100%;
 
             }
         }
     }
 }
 
-
-
-/* @keyframes show-nav {
-    from {
-        display: grid;
-        grid-template-columns: 0fr;
-        overflow: hidden;
-    }
-    to {
-        display: grid;
-        grid-template-columns: 1fr;
-        overflow: hidden;
-    }
-} */
-
-
-
 .logo {
     >img  {
-    height: calc(4vh + .5rem);
-    margin: .5rem;
+    height: 4vh;
+    /* margin: .5rem; */
     }
 }
+
+
+
+/* footer nav styles */
+
