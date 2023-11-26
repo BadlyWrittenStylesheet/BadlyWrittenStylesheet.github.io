@@ -1,36 +1,31 @@
 /* NESTING SUPERIORITY */
 /* (it's not superior) */
 
-nav {
+nav#main-nav {
     position: fixed;
     width: 100%;
-    background: #f08;
 
-    animation: show-nav 1s ease-in forwards 1s;
-    z-index: 5;
-    /* mix-blend-mode: difference; robi bardzo fajny efekt ale wymiotuje jak na to patrzę... */
+    /* animation: show 1s ease-in forwards 1s; */
+    /* z-index: 5; */
+
+    /* mix-blend-mode: difference;  */
+    /* ^^^ robi bardzo fajny efekt ale wymiotuje jak na to patrzę...*/
 
 
 
     >ul#nav-bar {
         display: flex;
-        /* align-items: center;
-        justify-content: center; */
         list-style: none;
-        /* padding: 1rem 0; */
-        box-shadow: 0 -1rem 1rem 1rem;
         padding: 0;
         
-        >li { /* :not(:has(.logo)) */
+        >li { /* :not(:has(.icon)) */
             text-align: center;
             flex-grow: 1    ;
-            /* height: 100%; */
             height: calc(4vh + .5rem);
             
-            /* height: 4vh; */
             position: relative;
             transition: 300ms ease-in;
-            &:has(.logo) { /* Ale zaawansowane */
+            &:has(.icon) { /* Ale zaawansowane */
                 flex-grow: .1;
                 
             }
@@ -60,25 +55,67 @@ nav {
             }
             >a {
                 display: block;
-                color: #111;
+                /* color: #111; */
                 /* background-color: red; */
                 text-decoration: none;
                 height: 100%;
-                width: 100%;
-
+                /* width: 100%; */
             }
         }
     }
 }
 
-.logo {
-    >img  {
-    height: 4vh;
-    /* margin: .5rem; */
-    }
-}
-
-
-
 /* footer nav styles */
 
+footer#main-footer {
+    padding: 4rem 0;
+}
+footer#main-footer > ul {
+    display: flex;
+    padding: 0;
+    list-style: none;
+}
+
+footer#main-footer > ul > li {
+    flex: 1;
+    text-align: center;
+}
+footer#main-footer > ul > li > nav {
+    height: 100%;
+}
+footer#main-footer > ul > li > nav > ul {
+    display: flex;
+    height: 100%;
+    
+    list-style: none;
+    padding: 0;
+}
+footer#main-footer > ul > li > nav > ul > li {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+footer#main-footer > ul > li > nav > ul > li > a {
+    /* display: block; */
+    width: 100%;
+}
+
+.media {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+}
+.media > div {
+    display: flex;
+    align-items: center;
+}
+
+.media > div > a {
+    display: flex;
+    gap: .5rem;
+}
+
+/* footer#main-footer > ul > li:has(img) {
+    flex-grow: .1;
+} */

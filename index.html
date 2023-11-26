@@ -30,16 +30,14 @@
     <link rel="stylesheet" href="./css/nav.css" />
   </head>
   <body>
-    <nav>
+    <nav id="main-nav">
       <ul id="nav-bar">
         <li><a href="#s1">Home</a></li>
         <li><a href="#s2">Who am I?</a></li>
         <li><a href="#s3">Skills</a></li>
         <li>
           <a href="#">
-            <div class="logo">
-              <img src="./assets/logo.svg" alt="logo" />
-            </div>
+              <img class="icon medium" src="./assets/logo.svg" alt="logo" />
           </a>
         </li>
         <li><a href="#s4">Interests</a></li>
@@ -70,32 +68,47 @@
     <section id="s6">
       <h1>My Future</h1>
     </section>
-    <footer>
-      <ul class="footer">
+    <footer id="main-footer">
+      <ul>
         <li>
           <div class="media">
-            <a href="https://github.com/Julian0rlowski">Github</a>
-            <a
-              href="https://www.linkedin.com/in/julian-or%C5%82owski-132b98283/"
-              >LinkedIn</a
-            >
+            <div>
+              <a href="https://github.com/Julian0rlowski">
+                <img class="icon small" src="./assets/github.svg" alt="github logo">
+                Julian0rlowski</a>
+            </div>
+            <div>
+              <a href="https://www.linkedin.com/in/julian-or%C5%82owski-132b98283/">
+                <img class="icon small" src="./assets/linkedin.svg" alt="linkedin logo">
+              Julian Orłowski</a>
+            </div>
           </div>
         </li>
         <li>
-          <img src="./assets/logo.svg" alt="logo" />
+            <img class="icon large" src="./assets/logo.svg" alt="logo"/>
         </li>
         <li>
           <nav>
-            <!-- Przzekopiowac z góry -->
+            <ul>
+              <li><a href="#s1">Home</a></li>
+              <li><a href="#s2">Who am I?</a></li>
+              <li><a href="#s3">Skills</a></li>
+              <!-- <li>
+                <a href="#">
+                    <img class="icon medium" src="./assets/logo.svg" alt="logo" />
+                </a>
+              </li> -->
+              <li><a href="#s4">Interests</a></li>
+              <li><a href="#s5">History</a></li>
+              <li><a href="#s6">Future</a></li>
+            </ul>
           </nav>
         </li>
       </ul>
     </footer>
 
     <div id="scroll-progress">
-      <!-- <div class="scroll-container"> -->
       <div class="current-scroll"></div>
-      <!-- </div> -->
     </div>
 
     <script src="./js/script.js"></script>

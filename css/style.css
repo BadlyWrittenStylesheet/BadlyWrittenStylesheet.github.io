@@ -1,10 +1,19 @@
 :root {
-  --bg-clr-1: #ee70ff;
+  /* --bg-clr-1: #ee70ff;
+  --bg-clr-1: #147560;
   --bg-clr-2: #111;
   --bg-clr-3: #e0dddd;
 
   --color-1: #333;
   --color-2: #ddd;
+
+  --scroll-clr: #6b02a8; */
+
+  --clr-bg: #dddddd;
+  --clr-text: #111111;
+  --clr-primary: #4f148a;
+  --clr-secondary: #ff0088;
+  --clr-accent: #8a32e2;
 }
 
 * {
@@ -17,77 +26,60 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: Inter;
+  color: var(--clr-text);
+  /* background: var(--clr-bg); */
 }
-
 
 section {
   min-height: 100vh;
   width: 100vw;
-  display: grid;
-  place-items: center;
-  background-color: #f08;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--clr-bg);
+  /* box-shadow: 0 1rem 1rem -.5rem var(--clr-text); */
+  /* margin-bottom: 1rem; */
 }
-/* 
-@keyframes show-line {
-  to {
-    stroke-dashoffset: 0;
-  }
-} */
 
 nav {
-  background-color: var(--bg-clr-1) !important;
+  /* animation: appear 1s ease forwards 2000ms; */
 }
 
-#s1 {
-  background-color: var(--bg-clr-1);
-}
-#s2 {
-  background-color: var(--bg-clr-2);
-  color: var(--color-2);
-}
-#s3 {
-  background-color: var(--bg-clr-3);
-}
-#s4 {
-  background-color: var(--bg-clr-1);
-}
-#s5 {
-  background-color: var(--bg-clr-3);
-}
-#s6 {
-  background-color: var(--bg-clr-2);
-  color: var(--color-2);
+.icon.large {
+  height: 8vh;
 }
 
-::-webkit-scrollbar { /* Bedzie kiedys o tym na lekcji? */
+.icon.medium {
+  height: 4vh;
+}
+
+.icon.small {
+  height: 2vh;
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-text);
+}
+
+::-webkit-scrollbar {
+  /* Bedzie kiedys o tym na lekcji? */
   width: 0;
-} 
+}
 
 #scroll-progress {
   position: fixed;
-  top: calc(100% - 10px);
+  top: 100%;
   transform: translate(0, -50%);
   height: 10px;
   width: 100%;
-
-  box-shadow: 0 -0.1rem 0.25rem #0008;
 }
 
 .current-scroll {
   height: 100%;
-  width: 100%;
-
-  background-image: linear-gradient(
-    90deg,
-    var(--bg-1-clr),
-    var(--bg-2-clr),
-    var(--bg-3-clr),
-    var(--bg-4-clr),
-    var(--bg-5-clr)
-  );
-
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
+  width: calc(var(--scroll) * 100%);
+  background: var(--scroll-clr);
 
   background-blend-mode: multiply;
 }
@@ -98,7 +90,7 @@ nav {
 
   transform: translate(0, -20vh);
   /* animation: arrow-appear 1s ease forwards 13s; */
-  animation: arrow-appear 1s ease forwards 4200ms;
+  animation: appear 1s ease forwards 2000ms;
 
   transition: 300ms ease-out;
   &:hover {
@@ -117,7 +109,7 @@ nav {
   opacity: 0.9;
 }
 
-@keyframes arrow-appear {
+@keyframes appear {
   from {
     opacity: 0;
   }

@@ -27,28 +27,28 @@
 
 // Scroll
 
-const scrollProgressElement = document.getElementById("scroll-progress");
+// const scrollProgressElement = document.getElementById("scroll-progress");
 // console.log(scrollProgressElement)
 
-scrollProgressElement.children[0].style.webkitMaskImage = `linear-gradient(90deg, #000 0%, #0000 0%)`;
+// scrollProgressElement.children[0].style.webkitMaskImage = `linear-gradient(90deg, #000 0%, #0000 0%)`;
 
-window.onscroll = function () {
-  scrollProgress = document.body.scrollY || document.documentElement.scrollTop;
-  maxScroll =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
-  progress = scrollProgress / maxScroll;
+// window.onscroll = function () {
+//   scrollProgress = document.body.scrollY || document.documentElement.scrollTop;
+//   maxScroll =
+//     document.documentElement.scrollHeight -
+//     document.documentElement.clientHeight;
+//   progress = scrollProgress / maxScroll;
   // console.log(scrollProgress, maxScroll, progress)
   // console.log(scrollProgressElement.children)
   // scrollProgressElement.children[0].style.width = `${progress * 100}%`
-  scrollProgressElement.children[0].style.webkitMaskImage = `linear-gradient(90deg, #000 ${
-    progress * 100
-  }%, #0000 ${progress * 100}%)`;
+  // scrollProgressElement.children[0].style.webkitMaskImage = `linear-gradient(90deg, #000 ${
+  //   progress * 100
+  // }%, #0000 ${progress * 100}%)`;
   // scrollProgressElement.children[0].style.maskImage = `linear-gradient(90deg, #000 ${
   //   progress * 100
   // }%, #0000 ${progress * 100}%)`;
   // console.log(scrollProgressElement.children[0].style.mask)
-};
+// };
 
 // Title
 
@@ -67,17 +67,19 @@ function createWord(parentElement, charArray) {
     
 title = document.getElementById("main-title");
 
-word1 = "Welcome!".split("");
+let word1 = "Welcome!".split("");
+let wordCount = 1
 // word2 = "my".split("");
 // word3 = "name".split("");
 // word4 = "is".split("");
 // word5 = "Julian".split("");
-wordCount = 1
 let timeOffset = 0;
 let time = 550;
 
 // words = [word1, word2, word3, word4, word5]
-words = [word1]
+let words = [word1]
+
+// Iterate on words and make spans that contain one letter of the word
 
 for (let i = 0; i < wordCount; i++) {
   wordContainer = document.createElement('div')
@@ -89,16 +91,19 @@ for (let i = 0; i < wordCount; i++) {
 };
 console.log(timeOffset); // 4500
 
+
+// Arrow that appears on #s1 when the animation is finished
+
 // const arrow = document.getElementById("down-arrow")
 // console.log(arrow, arrow.style.animationDelay)
 // console.log(arrow.style.animation)
 // arrow.style.animation = `arrow-appear 1s ease forwards ${timeOffset + 550}`
 // console.log(arrow.style.animation)
-console.log(arrow, arrow.style.animationDelay)
+// console.log(arrow, arrow.style.animationDelay)
 
 
 
-
+// Set a css variable that is the pogress of scrolling throught the page or smh
 window.addEventListener('scroll', () => {
-  document.body.style.setProperty('--scroll', window.scrollY / (document.body.offsetHeight - window.innerHeight)); // 2 raz
+  document.body.style.setProperty('--scroll', window.scrollY / (document.body.offsetHeight - window.innerHeight)); // 2 raz // jednak nie
 }, false);
