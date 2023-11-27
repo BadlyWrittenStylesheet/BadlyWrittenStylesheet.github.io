@@ -1,0 +1,90 @@
+section {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 8fr;
+    background-color: var(--clr-bg);
+    place-items: center;
+    padding: 2rem 3rem;
+}
+/* _|_|_  */
+/* _|_|_ */
+/*  | |  */
+
+
+#s1 {
+    grid-template-rows: repeat(3, 1fr);
+}
+
+#s2 {
+    /* background-color: red; */
+}
+
+#main-title {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+    /* background-color: red; */
+}
+
+#down-arrow {
+    grid-row: 3;
+    grid-column: span 2;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-family: Montserrat;
+    /* text-shadow: 0 .2rem .3rem currentColor; */
+    /* font-weight: lighter; */
+}
+
+section p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+/* Framework be like */
+
+section .row-2 {
+    grid-row: span 2;
+}
+
+section .col-2 {
+    grid-column: span 2;
+}
+
+section .center-v {
+    grid-row: 1;
+}
+section .center-h {
+    grid-column: 1;
+}
+
+section > * {
+    padding: .5rem 1.5rem;
+}
+
+/* Dziwne ale działa  */
+/* section article {
+    display: flex;
+    flex-direction: column;1
+    gap: 1rem;
+} */
+
+section img {
+    max-width: 50vw;
+}
+
+#s2 {
+    /* background-color: red; */
+}
+
+
+/* Wiem ze nie było i wogule ale no to tak okropnie wyglądało! */
+@media (max-width: 1444px) {
+    section:not(#s1) {
+        display: flex;
+        flex-direction: column  ;
+        /* background-color: blue; */
+    }
+}

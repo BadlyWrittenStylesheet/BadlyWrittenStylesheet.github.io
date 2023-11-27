@@ -1,19 +1,17 @@
 :root {
-  /* --bg-clr-1: #ee70ff;
-  --bg-clr-1: #147560;
-  --bg-clr-2: #111;
-  --bg-clr-3: #e0dddd;
-
-  --color-1: #333;
-  --color-2: #ddd;
-
-  --scroll-clr: #6b02a8; */
-
   --clr-bg: #dddddd;
   --clr-text: #111111;
   --clr-primary: #4f148a;
   --clr-secondary: #ff0088;
   --clr-accent: #8a32e2;
+}
+
+section {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  background-color: var(--clr-bg);
 }
 
 * {
@@ -27,23 +25,6 @@ body {
   margin: 0;
   font-family: Inter;
   color: var(--clr-text);
-  /* background: var(--clr-bg); */
-}
-
-section {
-  min-height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-  background-color: var(--clr-bg);
-  /* box-shadow: 0 1rem 1rem -.5rem var(--clr-text); */
-  /* margin-bottom: 1rem; */
-}
-
-nav {
-  /* animation: appear 1s ease forwards 2000ms; */
 }
 
 .icon.large {
