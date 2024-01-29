@@ -1,2 +1,3 @@
-# Julian0rlowski.github.io
-This is an about me page.
+# Welcome to my future portfolio
+# Check it out below!
+# [My portfolio!](https://badlywrittenstylesheet.github.io/)
